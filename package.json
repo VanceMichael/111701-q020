@@ -1,0 +1,10 @@
+{
+  "name": "collection-workflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build": "node --check src/source.mjs && node --check src/adapter.mjs && node --check src/store.mjs && node --check src/pipeline.mjs"
+  }
+}

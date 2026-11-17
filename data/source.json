@@ -1,0 +1,8 @@
+{
+  "source": "sample-20",
+  "observedAt": "2026-11-17T08:00:00.000Z",
+  "items": [
+    {"id": "20-A", "label": "职业考试场次样例甲", "state": "active", "revision": 1},
+    {"id": "20-B", "label": "职业考试场次样例乙", "state": "pending", "revision": 1}
+  ]
+}
