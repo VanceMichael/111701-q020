@@ -10,5 +10,25 @@ export async function collect({ source = readSource, store = new RecordStore() }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const result = await collect();
-  console.log(JSON.stringify({ source: result.source, count: result.records.length }, null, 2));
+  const summary = {
+    source: result.source,
+    count: result.records.length,
+    sessions: result.store.sessionStates().map(({ id, name, date, state, effectiveState }) => ({
+      id,
+      name,
+      date,
+      state,
+      effectiveState,
+    })),
+    pendingReschedules: result.store.pendingReschedules().map(({ sessionId, candidateId, candidateName }) => ({
+      sessionId,
+      candidateId,
+      candidateName,
+    })),
+    reminders: {
+      active: result.store.listReminders({ state: 'active' }).length,
+      revoked: result.store.listReminders({ state: 'revoked' }).length,
+    },
+  };
+  console.log(JSON.stringify(summary, null, 2));
 }

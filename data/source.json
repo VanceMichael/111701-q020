@@ -2,7 +2,21 @@
   "source": "sample-20",
   "observedAt": "2026-11-17T08:00:00.000Z",
   "items": [
-    {"id": "20-A", "label": "职业考试场次样例甲", "state": "active", "revision": 1},
-    {"id": "20-B", "label": "职业考试场次样例乙", "state": "pending", "revision": 1}
+    {"id": "20-A", "label": "职业考试场次样例甲", "date": "2026-12-05", "state": "active", "revision": 1},
+    {"id": "20-B", "label": "职业考试场次样例乙", "date": "2026-12-05", "state": "pending", "revision": 1},
+    {"id": "20-C", "label": "职业考试场次样例丙", "date": "2026-12-05", "state": "active", "revision": 1},
+    {"type": "roster", "id": "roster-20-A", "session": "20-A", "revision": 1, "candidates": [
+      {"id": "C-001", "name": "张三"},
+      {"id": "C-002", "name": "李四"}
+    ]},
+    {"type": "roster", "id": "roster-20-B", "session": "20-B", "revision": 1, "candidates": [
+      {"id": "C-101", "name": "王五"}
+    ]},
+    {"type": "roster", "id": "roster-20-C", "session": "20-C", "revision": 1, "candidates": [
+      {"id": "C-201", "name": "赵六"}
+    ]},
+    {"type": "notice", "id": "notice-20-A-stop", "notice": "suspension", "sessions": ["20-A"], "revision": 2},
+    {"type": "notice", "id": "notice-20-C-stop", "notice": "suspension", "sessions": ["20-C"], "revision": 2},
+    {"type": "notice", "id": "notice-20-C-resume", "notice": "resumption", "sessions": ["20-C"], "revision": 3}
   ]
 }
